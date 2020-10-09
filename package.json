@@ -1,0 +1,22 @@
+{
+  "name": "curso-angular2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel-RCastro/curso-angular2.git"
+  },
+  "author": "Gabriel Rodrigues de Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabriel-RCastro/curso-angular2/issues"
+  },
+  "homepage": "https://github.com/Gabriel-RCastro/curso-angular2#readme",
+  "description": "",
+  "dependencies": {
+    "node-modules": "^1.0.1"
+  }
+}
