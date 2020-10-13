@@ -17,6 +17,7 @@
   "homepage": "https://github.com/Gabriel-RCastro/curso-angular2#readme",
   "description": "",
   "dependencies": {
+    "angular2-materialize": "^15.1.10",
     "node-modules": "^1.0.1"
   }
 }
