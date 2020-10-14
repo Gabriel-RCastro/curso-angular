@@ -1,0 +1,62 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" class="form-horizontal">
+
+    <!-- [(ngModel)] = inicializar os valores e conseguir alterá-los
+        [ngModel] = apenas inicializar os valores sem conseguir alterá-los -->
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <label for="nome">Nome</label>
+        </div>
+        <div class="col-sm-12">
+            <input type="text" class="form-control" [class.is-invalid]="!nome.valid && nome.touched" name="nome"
+            id="nome" placeholder="Nome" [(ngModel)]="usuario.nome" #nome="ngModel" required>
+            <div class="invalid-feedback">
+                Nome é obrigatório.
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group" >
+        <div class="col-sm-12">
+            <label for="email">Email</label>
+        </div>
+        <div class="col-sm-12">
+            <input type="text" class="form-control" [class.is-invalid]="!email.valid && email.touched" name="email"
+            id="email" placeholder="nome@email.com" [(ngModel)]="usuario.email" #email="ngModel" required email>
+            <div class="invalid-feedback">
+                Email é obrigatório.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-3">
+            <label for="cep" class="control-label">CEP</label>  
+            <input type="text" class="form-control" [class.is-invalid]="!cep.valid && cep.touched" name ="cep" 
+            id="cep" ngModel required #cep="ngModel">
+            <div class="invalid-feedback">
+                CEP é obrigatório.
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <label for="numero" class="control-label">Número</label>  
+            <input type="text" class="form-control" [class.is-invalid]="!numero.valid && numero.touched" name ="numero" 
+            id="numero" ngModel required #numero="ngModel">
+            <div class="invalid-feedback">
+                Número é obrigatório.
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <label for="complemento" class="control-label">Complemento</label>  
+            <input type="text" class="form-control" name ="complemento" 
+            id="complemento" ngModel #complemento="ngModel">
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <button type="submit" class="btn btn-primary mb-2" [disabled]="f.invalid">Submit</button>
+
+        <app-form-debug [formulario]="f"></app-form-debug>
+    </div>
+</form>
