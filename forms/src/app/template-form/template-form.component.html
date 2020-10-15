@@ -14,7 +14,7 @@
 
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" class="form-control" [ngClass]="aplicaCssErro(email)" name="email" id="email"
+        <input type="email" class="form-control" [ngClass]="aplicaCssErro(email)" name="email" id="email"
             placeholder="nome@email.com" [(ngModel)]="usuario.email" #email="ngModel" required email>
         <div class="invalid-feedback">
             Email é obrigatório.
