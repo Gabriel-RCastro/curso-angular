@@ -1,12 +1,19 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
     <div class="form-group">
+        <app-input-field formControlName="nome" [classeCss]="aplicaCssErro('nome')" id="nome"
+            label="Nome">
+        </app-input-field>
+    </div>
+
+    <!-- <div class="form-group">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome"
             [ngClass]="aplicaCssErro('nome')">
         <div class="invalid-feedback">
             Nome é obrigatório.
         </div>
-    </div>
+    </div> -->
 
     <div class="form-group">
         <label for="email">Email</label>
@@ -40,7 +47,7 @@
             <div class="col-md-3 mb-3">
                 <label for="cep">CEP</label>
                 <input type="text" class="form-control" formControlName="cep" id="cep"
-                    [ngClass]="aplicaCssErro('endereco.cep')" (blur)="consultaCEP()">
+                    [ngClass]="aplicaCssErro('endereco.cep')">
                 <div *ngIf="formulario.get('endereco.cep').hasError('cepObrigatorio')" class="invalid-feedback">
                     CEP é obrigatório.
                 </div>
@@ -86,8 +93,10 @@
 
             <div class="col-md-4 mb-3">
                 <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" formControlName="cidade" id="cidade"
+                <select type="text" class="custom-select" formControlName="cidade" id="cidade"
                     [ngClass]="aplicaCssErro('endereco.cidade')">
+                    <option *ngFor="let cidade of cidades" [value]="cidade.nome">{{ cidade.nome }}</option>
+                </select>
                 <div class="invalid-feedback">
                     Cidade é obrigatório.
                 </div>
@@ -97,7 +106,7 @@
                 <label for="estado">Estado</label>
                 <select type="text" class="custom-select" formControlName="estado" id="estado"
                     [ngClass]="aplicaCssErro('endereco.estado')">
-                    <option *ngFor="let estado of estados | async" [value]="estado.sigla">{{ estado.nome }}</option>
+                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
                 </select>
                 <div class="invalid-feedback">
                     Estado é obrigatório.
@@ -114,11 +123,12 @@
         </select>
     </div>
 
-    <div class="form-group">
+    <div class="list-group col-md-6 mb-3">
         <label for="tecnologias">Tecnologias</label>
-        <select multiple type="text" class="form-control" formControlName="tecnologias" id="tecnologias"
+        <select multiple type="text" formControlName="tecnologias" id="tecnologias"
             [ngClass]="aplicaCssErro('tecnologias')">
-            <option *ngFor="let tecnologia of tecnologias" [value]="tecnologia.nome">{{ tecnologia.desc }}</option>
+            <option class="list-group-item" *ngFor="let tecnologia of tecnologias" [value]="tecnologia.nome">
+                {{ tecnologia.desc }}</option>
         </select>
     </div>
 
