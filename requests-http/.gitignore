@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+
 # Only exists if Bazel was run
 /bazel-out
 
@@ -48,3 +49,11 @@ Thumbs.db
 # Node
 /server/node_modules
 /server/uploads
+
+# Angular
+package-lock.json
+
+# Firebase
+.firebase
+firebase.json
+.firebaserc
