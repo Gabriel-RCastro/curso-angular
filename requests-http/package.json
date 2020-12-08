@@ -53,5 +53,9 @@
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "open": "^7.0.3"
-  }
+  },
+  "description": "json-server --watch db.json",
+  "main": "karma.conf.js",
+  "author": "Gabriel Rodrigues",
+  "license": "ISC"
 }
